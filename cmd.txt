@@ -1,0 +1,238 @@
+Copyright (C) Microsoft Corporation. All rights reserved.
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+PS D:\gitproject> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\gitproject> git --version
+git version 2.36.0.windows.1
+PS D:\gitproject> git checkout Git
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\gitproject> git init
+Initialized empty Git repository in D:/gitproject/.git/
+PS D:\gitproject> git checkout Git
+On branch master
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dummy.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\gitproject> git add .
+PS D:\gitproject> git commit -m
+error: switch `m' requires a value
+PS D:\gitproject> git commit -m "first commit"
+[master (root-commit) 9c8c07d] first commit
+ Committer: Anil Kumar Gupta <anilkumar.gupta@ltts.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+PS D:\gitproject> git push origin
+To push the current branch and set the remote as upstream, use
+
+
+PS D:\gitproject> git push --set-upstream origin master
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\gitproject> git push --set-upstream origin htmlcss
+error: src refspec htmlcss does not match any
+PS D:\gitproject> git push origin htmlcss
+error: src refspec htmlcss does not match any
+PS D:\gitproject> git branch -m master xyzzy
+PS D:\gitproject> git push -u origin xyzzy
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\gitproject> git clone https://github.com/anilkumarguptaltts/htmlcss.git
+Cloning into 'htmlcss'...
+warning: You appear to have cloned an empty repository.
+PS D:\gitproject> git status
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   dummy.txt
+
+Untracked files:
+        htmlcss/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\gitproject> cd htmlcss
+PS D:\gitproject\htmlcss> git status
+On branch main
+
+No commits yet
+
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dummy.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\gitproject\htmlcss> git add .
+PS D:\gitproject\htmlcss> git commit -m "add status"
+[main (root-commit) 3a3e3c6] add status
+ Committer: Anil Kumar Gupta <anilkumar.gupta@ltts.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+PS D:\gitproject\htmlcss> git push
+Enumerating objects: 3, done.
+Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
+To https://github.com/anilkumarguptaltts/htmlcss.git
+ * [new branch]      main -> main
+PS D:\gitproject\htmlcss> git log
+commit 3a3e3c64db80508b92857be33b0e44d58a50d4b1 (HEAD -> main, origin/main)
+Author: Anil Kumar Gupta <anilkumar.gupta@ltts.com>
+Date:   Wed May 11 14:22:58 2022 +0530
+
+    add status
+PS D:\gitproject\htmlcss> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        food.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\gitproject\htmlcss> git add .
+PS D:\gitproject\htmlcss> git commit -m "fidt commit"
+[main c36c8b3] fidt commit
+ Committer: Anil Kumar Gupta <anilkumar.gupta@ltts.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ create mode 100644 food.txt
+PS D:\gitproject\htmlcss> git push
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 281 bytes | 281.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anilkumarguptaltts/htmlcss.git
+   3a3e3c6..c36c8b3  main -> main
+PS D:\gitproject\htmlcss> git log --oneline
+c36c8b3 (HEAD -> main, origin/main) fidt commit
+3a3e3c6 add status
+PS D:\gitproject\htmlcss> git checkout 3e3e3c6
+error: pathspec '3e3e3c6' did not match any file(s) known to git
+PS D:\gitproject\htmlcss> git checkout c36c8b3
+Note: switching to 'c36c8b3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at c36c8b3 fidt commit
+PS D:\gitproject\htmlcss> git status
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   dummy.txt
+        modified:   food.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\gitproject\htmlcss> git add .
+PS D:\gitproject\htmlcss> git commit -m  "second      
+>> day""^C
+PS D:\gitproject\htmlcss> git commit -m "second commit"
+[detached HEAD e6dc344] second commit
+ Committer: Anil Kumar Gupta <anilkumar.gupta@ltts.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+following command and follow the instructions in your editor to edit
+your configuration file:
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+PS D:\gitproject\htmlcss> git status
+HEAD detached from c36c8b3
+PS D:\gitproject\htmlcss> git push
+fatal: You are not currently on a branch.
+state now, use
+
+    git push origin HEAD:<name-of-remote-branch>
+
+PS D:\gitproject\htmlcss> git push -u origin xyzzy
+error: src refspec xyzzy does not match any
+PS D:\gitproject\htmlcss> git push -u origin htmlcss
+error: src refspec htmlcss does not match any
+PS D:\gitproject\htmlcss> git push
+fatal: You are not currently on a branch.
+To push the history leading to the current (detached HEAD)
+state now, use
+
+    git push origin HEAD:<name-of-remote-branch>
+PS D:\gitproject\htmlcss> git status
+nothing to commit, working tree clean
+PS D:\gitproject\htmlcss> git push
+fatal: You are not currently on a branch.
+To push the history leading to the current (detached HEAD)
+state now, use
+
+    git push origin HEAD:<name-of-remote-branch>
+
+PS D:\gitproject\htmlcss> git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+PS D:\gitproject\htmlcss> git checkout main  
+Warning: you are leaving 1 commit behind, not connected to
+
+  e6dc344 second commit
+
+If you want to keep it by creating a new branch, this may be a good time
+
+
+Your branch is up to date with 'origin/main'.
+PS D:\gitproject\htmlcss> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS D:\gitproject\htmlcss> git push
+Everything up-to-date
+PS D:\gitproject\htmlcss> git branch
+* main
+PS D:\gitproject\htmlcss> git checkout coursera
+error: pathspec 'coursera' did not match any file(s) known to git
+PS D:\gitproject\htmlcss>
